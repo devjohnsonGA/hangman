@@ -10,10 +10,12 @@ document.getElementById('submit').addEventListener('click', function(){
   alert("Welcome to HangMan. Submit a guess in box!");
 })
 
-document.getElementById('submit').addEventListener('click', function(){
-  
-})
 
+document.getElementById('submitGuess').addEventListener('click', function(){
+  event.preventDefault()
+  var guess = document.getElementById('text').value
+  console.log(guess)
+})
 
 
 
