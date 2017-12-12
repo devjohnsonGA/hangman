@@ -13,8 +13,14 @@ document.getElementById('submit').addEventListener('click', function(){
 
 document.getElementById('submitGuess').addEventListener('click', function(){
   event.preventDefault()
+  var word = ['T', 'E', 'S', 'T']
   var guess = document.getElementById('text').value
-  console.log(guess)
+  console.log(guess) //used typeof to see its coming back as a string
+  for (i=0; i<7; i++){
+  if(word.indexOf(guess) >= 0){
+    console.log('match')
+  }
+  }
 })
 
 
