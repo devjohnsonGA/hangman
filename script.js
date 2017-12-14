@@ -4,125 +4,41 @@
 // //unsucessful guess is tallied to see who gets hangman first out of 2 players
 // //if both players get hangman reveal Word
 
-var gameWords = ['test', 'winner', 'dog'] //words
-var randomWords = gameWords[Math.floor(Math.random() * gameWords.length)] //code to randomly select which word in array is selected
+var randomWordArr = ["test", "winner", "dog"] //words
+var randomWords = randomWordArr[Math.floor(Math.random() * randomWordArr.length)] //code to randomly select which word in array is selected
 
 var d
 var count = 0
 var answerArray = [] //store answers
 
 
-
-function blanks(){ //getting blanks in array from word
+document.getElementById("startGame").addEventListener("click", startUp)
+function startUp(){ //getting blanks in array from word
   for (i = 0; i < randomWords.length; i++){
-    answerArray[i] = '__'
+    answerArray[i] = "_"
 }
 
-d = answerArray.join(' ')
-document.getElementById('text').innerHTML = d
+d = answerArray.join(" ")
+document.getElementById("answer").innerHTML = d
 
 function Letter(){
-  var letter = document.getElementById('text').value
+  var letter = document.getElementById("letter").value
 
   if (letter.length > 0) {
-    
+
+    for (var i = 0; i < randomWords.length; i++){
+
+      if (randomWords[i] === letter){ //check if letter is in chosen word
+        answerArray[i] = letter //plug it in
+      }
+    }
+    //attempt tracker
+    count++
+    document.getElementById("counter").innerHTML = 'HANGMAN count: ' + count
+    document.getElementById("answer").innerHTML = answerArray.join('')
+  }
+  if(count>6){
+    document.getElementById("stat").innerHTML = 'You have one more guess until HANGMAN!'
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//
-// var word = ['T', 'E', 'S', 'T']
-// var letters = []
-//
-// document.getElementById('submit').addEventListener('click', function(){
-//   event.preventDefault()
-//   alert("Welcome to HangMan. Submit a guess in box!");
-// })
-//
-
-//
-// document.getElementById('submitGuess').addEventListener('click', function(){
-//   event.preventDefault()
-//   var guess = document.getElementById('text').value
-//   console.log(guess) //used typeof to see its coming back as a string
-//   // for (i=0; i<7; i++){
-//   // if(word.indexOf(guess) >= 0){
-//   //   console.log('match')
-//   // }
-//   // }
-// })
-
-
-
-
-
-
-
-
-
-
-// // alert("Welcome to HangMan. Submit a guess in box!");
-//
-// function hangmanGuess(){
-// var word = ['T', 'E', 'S', 'T']
-// var hangman = ['H', 'A', 'N', 'G', 'M', 'A', 'N']
-// var guessAgain = alert("Enter another letter")
-// var guess = document.getElementById('text')
-// var letter = guess
-// for (i=0; i<8; i++){
-//   if( letter == word) {
-//     event.preventDefault()
-//     console.log(letter)
-//     console.log(word)
-//     // alert("That was a correct letter")
-//     // alert(word[] + " is a corret guess!")
-//   } else {
-//     console.log(letter)
-//     // alert(guessAgain)
-//     // alert(letter + " is an incorrect guess!")
-//   }
-//   }
-// })
-
-
-
-//guessing game element to cycle through HANGMAN
-
-
-// document.getElementById('submit').addEventListener('click', function (event) {
-//   event.preventDefault()
-//   var guess = document.getElementById('text').value.split('')
-//   console.log(guess)
-//   document.getElementById('word').innerHTML = guess
-// })
-
-// retrieve data from botton then display it
-// once displayed figure out how to split it up then show blank spaces
-// work on guessing functionality
+}
