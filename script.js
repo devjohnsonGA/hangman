@@ -4,8 +4,30 @@
 // //unsucessful guess is tallied to see who gets hangman first out of 2 players
 // //if both players get hangman reveal Word
 
-var gameWords = ['test', 'winner', 'dog']
-var randomWords = gameWords[Math.floor * gameWords.length]
+var gameWords = ['test', 'winner', 'dog'] //words
+var randomWords = gameWords[Math.floor(Math.random() * gameWords.length)] //code to randomly select which word in array is selected
+
+var d
+var count = 0
+var answerArray = [] //store answers
+
+
+
+function blanks(){ //getting blanks in array from word
+  for (i = 0; i < randomWords.length; i++){
+    answerArray[i] = '__'
+}
+
+d = answerArray.join(' ')
+document.getElementById('text').innerHTML = d
+
+function Letter(){
+  var letter = document.getElementById('text').value
+
+  if (letter.length > 0) {
+    
+  }
+}
 
 
 
@@ -44,10 +66,7 @@ var randomWords = gameWords[Math.floor * gameWords.length]
 //   alert("Welcome to HangMan. Submit a guess in box!");
 // })
 //
-// // function blank(){
-// //   for (i = 0; i < word.length; i++)
-// //   letters[i] = '__'
-// // }
+
 //
 // document.getElementById('submitGuess').addEventListener('click', function(){
 //   event.preventDefault()
