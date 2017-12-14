@@ -21,6 +21,7 @@ function startUp(){ //getting blanks in array from word
 d = answerArray.join(" ")
 document.getElementById("answer").innerHTML = d
 
+document.getElementById("letter").addEventListener("click", Letter)
 function Letter(){
   var letter = document.getElementById("letter").value
 
