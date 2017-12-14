@@ -1,27 +1,64 @@
-//set up guessing game
-//word is set but would want to add random word selector
-//split it into 2 player with a successful guess leading to solve opportunity
-//unsucessful guess is tallied to see who gets hangman first out of 2 players
-//if both players get hangman reveal Word
+// //set up guessing game
+// //word is set but would want to add random word selector
+// //split it into 2 player with a successful guess leading to solve opportunity
+// //unsucessful guess is tallied to see who gets hangman first out of 2 players
+// //if both players get hangman reveal Word
+
+var gameWords = ['test', 'winner', 'dog']
+var randomWords = gameWords[Math.floor * gameWords.length]
 
 
-document.getElementById('submit').addEventListener('click', function(){
-  event.preventDefault()
-  alert("Welcome to HangMan. Submit a guess in box!");
-})
 
 
-document.getElementById('submitGuess').addEventListener('click', function(){
-  event.preventDefault()
-  var word = ['T', 'E', 'S', 'T']
-  var guess = document.getElementById('text').value
-  console.log(guess) //used typeof to see its coming back as a string
-  for (i=0; i<7; i++){
-  if(word.indexOf(guess) >= 0){
-    console.log('match')
-  }
-  }
-})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//
+// var word = ['T', 'E', 'S', 'T']
+// var letters = []
+//
+// document.getElementById('submit').addEventListener('click', function(){
+//   event.preventDefault()
+//   alert("Welcome to HangMan. Submit a guess in box!");
+// })
+//
+// // function blank(){
+// //   for (i = 0; i < word.length; i++)
+// //   letters[i] = '__'
+// // }
+//
+// document.getElementById('submitGuess').addEventListener('click', function(){
+//   event.preventDefault()
+//   var guess = document.getElementById('text').value
+//   console.log(guess) //used typeof to see its coming back as a string
+//   // for (i=0; i<7; i++){
+//   // if(word.indexOf(guess) >= 0){
+//   //   console.log('match')
+//   // }
+//   // }
+// })
 
 
 
