@@ -21,9 +21,10 @@ function startUp(){ //getting blanks in array from word
 d = answerArray.join(" ")
 document.getElementById("answer").innerHTML = d
 
-document.getElementById("letter").addEventListener("click", Letter)
+document.getElementById("letterSubmit").addEventListener("click", Letter)
 function Letter(){
   var letter = document.getElementById("letter").value
+  console.log(letter)
 
   if (letter.length > 0) {
 
@@ -35,11 +36,8 @@ function Letter(){
     }
     //attempt tracker
     count++
-    document.getElementById("counter").innerHTML = 'HANGMAN count: ' + count
-    document.getElementById("answer").innerHTML = answerArray.join('')
-  }
-  if(count>6){
-    document.getElementById("stat").innerHTML = 'You have one more guess until HANGMAN!'
+    document.getElementById("counter").innerHTML = "HANGMAN count: " + count
+
   }
 }
 }
