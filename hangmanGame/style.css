@@ -1,0 +1,16 @@
+body {
+    background: rgb(185, 185, 223);
+    text-align: center;
+  }
+  
+  h1 {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 400%;
+  }
+  
+  p {
+    text-align: center;
+    color: black;
+    font-size: 300%;
+  
+  }
